@@ -1,0 +1,28 @@
+{
+  "name": "screquest",
+  "version": "1.0.0",
+  "description": "request",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shenchao890216/screquest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shenchao890216/screquest/issues"
+  },
+  "homepage": "https://github.com/shenchao890216/screquest#readme",
+  "devDependencies": {
+    "delete": "^1.1.0",
+    "gulp": "^4.0.2",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "es6-promise": "^4.2.8"
+  }
+}
