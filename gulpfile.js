@@ -1,22 +1,19 @@
-const { src, dest } = require('gulp')
+const { src, dest, series } = require('gulp')
 const del = require('delete')
 const webpackStream = require('webpack-stream')
-
-function defaultTask (cb) {
-  cb()
-}
 
 function clean (cb) {
   del(['dist/**'], cb)
 }
 
-function webpack (cb) {
+function webpack () {
   return src('./index.js')
     .pipe(webpackStream({
       mode: 'development',
       output: {
         filename: 'screquest.js',
-        library: 'screquest'
+        library: 'screquest',
+        libraryTarget: 'global'
       },
       devtool: '#inline-source-map'
     }))
@@ -25,5 +22,5 @@ function webpack (cb) {
 
 exports.clean = clean
 exports.webpack = webpack
-exports.default = defaultTask
+exports.default = series(clean, webpack)
 

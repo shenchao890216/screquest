@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>screquest</title>
+  </head>
+  <body>
+    <h2>screquest</h2>
+    <script src="../dist/screquest.js"></script>
+    <script>
+      // get method.
+      screquest.get('https://private-65c6a-scrd.apiary-mock.com/questions').success(res => {
+        console.log(res)
+      })
+
+      // post method.
+      screquest.post('https://private-65c6a-scrd.apiary-mock.com/questions', {
+        question: 'Favourite programming language?',
+        choices: [
+          'Swift',
+          'Python',
+          'Objective-C',
+          'Ruby'
+        ]
+      }).success(res => {
+        console.log(res)
+      })
+    </script>
+  </body>
+</html>
